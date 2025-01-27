@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jon Josiah's Projects</title>
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            overflow-x: hidden;
+            position: relative;
+            background-image: url('images/eclipse.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-image: url('images/eclipse-highres.jpg');
+                background-size: cover;
+                background-position: center center;
+            }
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 1rem 2rem;
+            z-index: 100;
+            background-color: rgba(13, 17, 23, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar a {
+            color: #58a6ff;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #58a6ff;
+            transition: width 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ffffff;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            padding-top: 300px;
+        }
+
+        .profile-content {
+            z-index: 1;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .introduction {
+            color: #8b949e;
+            margin-bottom: 2rem;
+            margin-top: 15rem;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            opacity: 0;
+            animation: fadeInUp 2s forwards;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 2s forwards 1s;
+        }
+
+        .projects-section {
+            margin-top: 4rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: rgba(13, 17, 23, 0.7);
+            border: 2px solid #30363d;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card h3 {
+            color: #58a6ff;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-card p {
+            color: #8b949e;
+            margin-bottom: 1.5rem;
+            opacity: 1;
+            animation: none;
+        }
+
+        .project-links a {
+            display: inline-block;
+            font-size: 1rem;
+            margin: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border: 2px solid #58a6ff;
+            color: #58a6ff;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 2s forwards 2s;
+            z-index: 1;
+        }
+
+        .project-links a:hover {
+            background-color: #58a6ff;
+            color: #0d1117;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #8b949e;
+        }
+
+        footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="404.html" class="btn btn-primary">Contact</a>
+    </nav>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header Section -->
+    <header id="home">
+        <div class="profile-content">
+            <h1>Hey, I'm Jon Josiah</h1>
+            <div class="introduction" id="about">
+                <p>Welcome to my digital space! I'm a 21-year-old passionate student diving deep into the world of
+                    technology and web development. When I'm not coding, you'll find me in the competitive arena of
+                    Mobile Legends, strumming my favorite tunes on a musical instrument, or exploring the captivating
+                    worlds of anime.</p>
+                <p>This website is a personal project, crafted purely for educational purposes – a digital playground
+                    where I showcase my learning journey and technical skills.</p>
+            </div>
+            <div id="projects" class="projects-section">
+                <div class="projects-grid">
+                    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+                        <h3>Core Memories</h3>
+                        <p>A project inspired by Inside Out theme.</p>
+                        <div class="project-links">
+                            <a href="A08/index.php">View Project</a>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </header>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Created by <a href="https://github.com/Siah-6" target="_blank">Jon Josiah</a> &copy; 2024</p>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 100 },
+                color: { value: "#58a6ff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5 },
+                size: { value: 2 },
+                move: { speed: 1 }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
